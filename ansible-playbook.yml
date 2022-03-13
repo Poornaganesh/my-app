@@ -7,6 +7,17 @@
         name: python-pip
         service: present
 
+    - name: install docker
+      yum:
+        name: docker
+        state: present
+
+    - name: start docker
+      service:
+        name: docker
+        state: started
+        enabled: yes   
+
     - name: install docker py
       pip:
         name: docker.py
@@ -19,3 +30,4 @@
         state: started
         ports:
           -"80:9090"
+
