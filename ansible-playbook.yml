@@ -4,9 +4,7 @@
   tasks:
   
     - name: install pip
-      yum:
-        name: python2-pip
-        service: present
+      shell:sudo yum install python-pip -y
 
     - name: install docker
       yum:
