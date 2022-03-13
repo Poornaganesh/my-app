@@ -4,7 +4,9 @@
   tasks:
   
     - name: install pip
-      shell:nohup sudo yum install python-pip -y &
+      yum:
+        name: python-pip
+        service: present
 
     - name: install docker
       yum:
