@@ -29,4 +29,4 @@
         image: "ajayganesh/myweb:0.0.2"
         state: started
         ports:
-          -"80:9090"
+          -"8080:9090"
