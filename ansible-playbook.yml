@@ -1,0 +1,21 @@
+- hosts: dev
+  remote_user: ec2-user
+  become: yes
+  tasks:
+    - name: install pip
+      yum:
+        name: python-pip
+        service: present
+
+    - name: install docker py
+      pip:
+        name: docker.py
+        service: present
+
+    - name: container
+      docker_container:
+        name: tomcattest
+        image: "ajayganesh/myweb:0.0.2"
+        state: started
+        ports:
+          -"80:9090"
