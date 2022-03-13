@@ -6,7 +6,7 @@
     - name: install pip
       yum:
         name: python-pip
-        service: present
+        state: present
 
     - name: install docker
       yum:
