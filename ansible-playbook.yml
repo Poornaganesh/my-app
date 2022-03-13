@@ -2,6 +2,11 @@
   remote_user: ec2-user
   become: yes
   tasks:
+    - name: install pip
+      yum:
+        name: python-pip
+        service: present
+
     - name: install docker
       yum:
         name: docker
@@ -13,6 +18,10 @@
         state: started
         enabled: yes   
 
+    - name: install docker py
+      pip:
+        name: docker.py
+        service: present
 
     - name: container
       docker_container:
