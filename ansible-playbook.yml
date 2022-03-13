@@ -3,9 +3,8 @@
   become: yes
   tasks:
     - name: install pip
-      yum:
-        name: python-pip
-        service: present
+      pip:
+        name: bottle
 
     - name: install docker
       yum:
