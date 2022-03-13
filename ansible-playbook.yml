@@ -14,11 +14,6 @@
         state: started
         enabled: yes   
 
-    - name: install docker py
-      pip:
-        name: docker.py
-        service: present
-
     - name: container
       docker_container:
         name: tomcattest
